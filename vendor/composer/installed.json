@@ -3738,7 +3738,7 @@
         },
         "time": "2016-09-25 05:22:10",
         "type": "library",
-        "installation-source": "dist",
+        "installation-source": "source",
         "autoload": {
             "psr-4": {
                 "Encore\\Admin\\": "src/"
