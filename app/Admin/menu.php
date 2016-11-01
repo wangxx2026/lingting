@@ -40,4 +40,9 @@ return [
                 ],
             ]
     ],
+    [
+        'title' => '文章',
+        'url' => '/article',
+        'icon'  => 'fa-mars'
+    ],
 ];
