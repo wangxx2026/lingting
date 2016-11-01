@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// 登陆接口
+Route::get('/login/', function () {
+    return json_encode(array('username' =>$_GET['username'], 'passwod' => $_GET['password']));
+});
+
+
+// 注册接口
+
+Route::get('/register/', function () {
+    return array('username' =>$_GET['username'], 'passwod' => $_GET['password']);
+});
+
+// 咨询师列表
