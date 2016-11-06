@@ -16,9 +16,7 @@ Route::get('/', function () {
 });
 
 // 登陆接口
-Route::get('/login/', function () {
-    return json_encode(array('username' =>$_GET['username'], 'passwod' => $_GET['password']));
-});
+Route::get('/login/', 'Login@index');
 
 
 // 注册接口
