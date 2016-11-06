@@ -18,4 +18,9 @@ class Login extends Controller
         }
     }
 
+    public function test(Request $request)
+    {
+        echo $request->cookie('lingting_authen');
+    }
+
 }

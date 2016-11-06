@@ -19,6 +19,9 @@ Route::get('/', function () {
 Route::get('/login/', 'Login@index');
 
 
+// 登陆接口
+Route::get('/login/test/', 'Login@test');
+
 // 注册接口
 
 Route::get('/register/', function () {
