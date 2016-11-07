@@ -16,11 +16,11 @@ Route::get('/', function () {
 });
 
 // 登陆接口
-Route::get('/login/', 'Login@index');
+Route::get('/login/', 'Login@index')->middleware('format');
 
 
 // 登陆接口
-Route::get('/login/test/', 'Login@test');
+Route::get('/login/test/', 'Login@test')->middleware('format');
 
 // 注册接口
 

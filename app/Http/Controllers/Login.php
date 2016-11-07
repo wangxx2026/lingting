@@ -13,14 +13,17 @@ class Login extends Controller
     {
         if($request->input('username'))
         {
-            echo 'aaaa';
-            return response('')->cookie('lingting_authen', $request->input('username'), 30*24*60*60);
+
+
+            return response(array( 'code' => 200, 'msg' => '', 'rst' => $request->input('username')))->cookie('lingting_authen', $request->input('username'), 10);
+
         }
     }
 
     public function test(Request $request)
     {
-        echo $request->cookie('lingting_authen');
+        $content = $request->cookie('lingting_authen');
+        return response(array('code' => 200, 'msg' => '', 'rst' => $content));
     }
 
 }
