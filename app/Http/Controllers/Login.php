@@ -5,18 +5,25 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\User as user;
 
 class Login extends Controller
 {
     //登陆接口
     public function index(Request $request)
     {
-        if($request->input('username'))
+        if($request->input('mobile'))
         {
-
-
-            return response(array( 'code' => 200, 'msg' => '', 'rst' => $request->input('username')))->cookie('lingting_authen', $request->input('username'), 10);
-
+            $data = user::where('mobile', $request->input('mobile'))->first();
+            $rst = array(
+                'id' => $data->id,
+                'mobile' => $data->mobile,
+                'username' => $data->username,
+                'status' => $data->status,
+                'ceate_time' => $data->ceate_time,
+                'update_time' => $data->update_time
+            );
+            return response(array( 'code' => 200, 'msg' => '', 'rst' => $rst))->cookie('lingting_authen', $rst, 10);
         }
     }
 
